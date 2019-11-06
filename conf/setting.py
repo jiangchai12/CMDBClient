@@ -1,4 +1,5 @@
 # Author:jiangcaiyun
+# coding:utf-8
 Params = {
     "server": "127.0.0.1",
     "port":8000,

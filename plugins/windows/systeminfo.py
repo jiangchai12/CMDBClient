@@ -63,10 +63,6 @@ class win32info(object):
         for disk in self.wmi_obj.Win32_DiskDrive():
             data_item = {}
             # print(disk.Model,disk.Size,disk.DeviceID,disk.Name,disk.Index,disk.SerialNumber,disk.SystemName,disk.Description)
-            # print("Index=", disk.Index)  # 磁盘序号d
-            # print("SystemName", disk.SystemName)    # 磁盘名称
-            # print("Description=", disk.Description)    # 描述
-            # print("Manufacturer=", disk.Manufacturer)     # 厂家
             # print("SerialNumber=", disk.SerialNumber)
             iface_choices = ["SAS", "SCSI", "SATA", "SSD"]
             for iface in iface_choices:
