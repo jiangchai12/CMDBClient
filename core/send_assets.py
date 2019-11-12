@@ -93,7 +93,7 @@ class ArgvHanddler(object):
                 req = urllib2.Request(url=urls, data=data_encode)
                 req_data = urllib2.urlopen(req, timeout=timeout)
                 callback = req_data.read()
-                print("callback-->", callback)
+                print("server_callback-->", callback)
                 return callback
             except Exception as e:
                 sys.exit("\033[31;m1%s\033[0m" % e)
@@ -116,7 +116,7 @@ class ArgvHanddler(object):
         object = info_collection.InfoCollection()
         asset_data = object.collection()
         asset_id = self.load_asset_id()
-        print("asset_id-->", asset_id)
+        # print("asset_id-->", asset_id)
         if asset_id:
             asset_data["asset_id"] = asset_id
             action_type = 'asset_report'
@@ -131,13 +131,9 @@ class ArgvHanddler(object):
         if respose_data:
             respose_data = json.loads(respose_data)
             if 'asset_id' in respose_data:
+
                 asset_id = respose_data['asset_id']
                 self.__update_asset_id(asset_id)
-
-
-
-
-
 
 
     def run_forever(self):
