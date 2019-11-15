@@ -27,14 +27,14 @@ class win32info(object):
         data = {}
         cpu_listsss = self.wmi_obj.Win32_Processor()
         # print(cpu_listsss.DeviceID, cpu_listsss.LoadPercentage)
-        cpu_core_conut = 0
+        cpu_core_count = 0
         cpu_model = ''
         for cpu in cpu_listsss:
-            cpu_core_conut =+ cpu.NumberOfCores
+            cpu_core_count =+ cpu.NumberOfCores
             cpu_model = cpu.Name
         data["cpu_model"] = cpu_model
-        data["cpu_core_number"] = cpu_core_conut
-        data["cpu_number"] = len(cpu_listsss)
+        data["cpu_core_count"] = cpu_core_count
+        data["cpu_count"] = len(cpu_listsss)
         # print(data)
         return data
     def get_ram_info(self):
