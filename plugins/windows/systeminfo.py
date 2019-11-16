@@ -91,7 +91,7 @@ class win32info(object):
             if nic.MACAddress is not None:
                 data_item = {}
                 data_item["macaddress"] = nic.MACAddress
-                data_item["Model"] = nic.Caption
+                data_item["model"] = nic.Caption
                 data_item["name"] = nic.Index
                 if nic.IPAddress is not None:
                     data_item["ipaddress"] = nic.IPAddress
